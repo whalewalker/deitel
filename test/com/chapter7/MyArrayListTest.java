@@ -1,6 +1,6 @@
 package com.chapter7;
 
-import Java.com.MyArrayList;
+import Java.com.javaChapter7.MyArrayList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,6 +36,16 @@ class MyArrayListTest {
     }
 
     @Test
+    void testIfIndexOfArrayCanBeRemove(){
+        int [] newArr = {3,6,1,7,9};
+        int[] output = array.removeItemInArray(newArr, 4);
+        int [] test ={3,6,1,7};
+        assertEquals(Arrays.toString(output), Arrays.toString(test));
+    }
+
+
+
+    @Test
     void testForTheMinimumArrayOfIntegers(){
         int [] newArr = {3,6,1,0,-4};
         int minimum = array.getMinimumFromArr(newArr);
@@ -58,16 +68,24 @@ class MyArrayListTest {
     }
 
     @Test
+    void testIfArrayIsSortedUsingInsert(){
+        int [] newArr = {3,6,7,3,3};
+        array.insertArray(newArr);
+        int [] testingArray = {3, 3, 3, 6, 7};
+        assertEquals(Arrays.toString(newArr), Arrays.toString(testingArray));
+    }
+
+    @Test
     void testForMaximumCumulativeSumOfElementInArray(){
-        int [] newArr = {1, 2, 3};
+        int [] newArr = {1, 2, 3, 2};
         int maxCumulativeSum = array.MaximumCumulativeSumOfElementInArray(newArr);
-        assertEquals(5, maxCumulativeSum);
+        assertEquals(7, maxCumulativeSum);
     }
 
     @Test
     void testForMinimumCumulativeSumOfElementInArray(){
-        int [] newArr = {1, 2, 3};
+        int [] newArr = {1, 2, 3, 1, 0};
         int minCumulativeSum = array.MinimumCumulativeSumOfElementInArray(newArr);
-        assertEquals(3, minCumulativeSum);
+        assertEquals(4, minCumulativeSum);
     }
 }
