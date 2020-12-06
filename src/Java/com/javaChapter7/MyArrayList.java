@@ -55,47 +55,6 @@ public class MyArrayList {
         }
     }
 
-    public int MaximumCumulativeSumOfElementInArray(int[] newArr) {
-        int maxCount = 0;
-        for (int counter = 0;  counter < newArr.length; counter++){
-            int sum = sumArrayElement(removeItemInArray(newArr, counter));
-            if (sum > maxCount){
-                maxCount = sum;
-            }
-        }
-        return maxCount;
-    }
-
-    public int MinimumCumulativeSumOfElementInArray(int[] newArr) {
-        int minCount = 0;
-        for (int counter = 0;  counter < newArr.length; counter++){
-            int sum = sumArrayElement(removeItemInArray(newArr, counter));
-            if (minCount == 0){
-                minCount = sum;
-            }
-            else {
-                if (sum < minCount) {
-                    minCount = sum;
-                }
-            }
-        }
-        return minCount;
-    }
-
-    public int[] removeItemInArray(int[] grade, int index){
-        if(grade == null || index < 0 || index >= grade.length){
-            return grade;
-        }
-        int [] newArray = new int[grade.length - 1];
-        for(int counter = 0, indexValue = 0; counter < grade.length; counter++){
-            if(counter == index){
-                continue;
-            }
-            newArray[indexValue++] = grade[counter];
-        }
-        return newArray;
-    }
-
     public void  insertArray(int[] newArr) {
         for (int count = 1; count < newArr.length; count++){
             int current = newArr[count];
@@ -108,16 +67,55 @@ public class MyArrayList {
         }
     }
 
+    public int[] removeItemInArray(int[] arr, int index){
+        if(arr == null || index < 0 || index >= arr.length)
+            return arr;
+
+        int [] newArray = new int[arr.length - 1];
+        for(int counter = 0, indexValue = 0; counter < arr.length; counter++){
+            if(counter == index){
+                continue;
+            }
+            newArray[indexValue++] = arr[counter];
+        }
+        return newArray;
+    }
+
+    public int MaximumCumulativeSumOfElementInArray(int[] newArr) {
+        int maxCount = 0;
+        for (int counter = 0;  counter < newArr.length; counter++){
+            int[] returnedArr = removeItemInArray(newArr, counter);
+            int sum = sumArrayElement(returnedArr);
+            if (sum > maxCount){
+                maxCount = sum;
+            }
+        }
+        return maxCount;
+    }
+
+    public int MinimumCumulativeSumOfElementInArray(int[] newArr) {
+        int minCount = 0;
+        for (int counter = 0;  counter < newArr.length; counter++){
+            int[] returnedArr =  removeItemInArray(newArr, counter);
+            int sum = sumArrayElement(returnedArr);
+            if (minCount == 0){
+                minCount = sum;
+            }
+            else {
+                if (sum < minCount) {
+                    minCount = sum;
+                }
+            }
+        }
+        return minCount;
+    }
+
+
+
     public static void main(String[] args) {
         int [] number = {3,6,7,9};
         MyArrayList array = new MyArrayList();
-
-        int value = array.MaximumCumulativeSumOfElementInArray(number);
-        System.out.println(value);
-        int min = array.MinimumCumulativeSumOfElementInArray(number);
-        System.out.println(min);
-
-        int [] newArr = {3,6,1, 7};
-        System.out.println(Arrays.toString(array.removeItemInArray(newArr, 0)));
     }
+
+
 }

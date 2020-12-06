@@ -88,4 +88,5 @@ class MyArrayListTest {
         int minCumulativeSum = array.MinimumCumulativeSumOfElementInArray(newArr);
         assertEquals(4, minCumulativeSum);
     }
+
 }
