@@ -89,4 +89,15 @@ class MyArrayListTest {
         assertEquals(4, minCumulativeSum);
     }
 
+    @Test
+    void testForMaxMinCumulativeSumOfElementInArray(){
+        int [] newArr = {1, 2, 3};
+        int [] maxMinCumulativeSum = array.MaxMinCumulativeSumOfElementInArray(newArr);
+        int [] result = {3, 5};
+        assertEquals(Arrays.toString(maxMinCumulativeSum),Arrays.toString(result));
+    }
+
+
+
+
 }

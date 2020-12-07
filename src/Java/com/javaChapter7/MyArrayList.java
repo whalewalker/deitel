@@ -19,9 +19,14 @@ public class MyArrayList {
     public int getMinimumFromArr(int[] newArr) {
         int minimum = 0;
         for (int counter = 0; counter < newArr.length; counter++) {
-            if (newArr[counter] < minimum) {
+            if(minimum == 0){
                 minimum = newArr[counter];
+            }else {
+                if (newArr[counter] < minimum) {
+                    minimum = newArr[counter];
+                }
             }
+
         }
 
         return minimum;
@@ -110,11 +115,23 @@ public class MyArrayList {
         return minCount;
     }
 
-
+    public int[] MaxMinCumulativeSumOfElementInArray(int[] newArr) {
+        int [] maxMinCumulativeSum = new int[2];
+        int sum = sumArrayElement(newArr);
+        int min = getMinimumFromArr(newArr);
+        int max = getMaximumFromArr(newArr);
+        int maxSum = sum - min;
+        int minSum = sum - max;
+        maxMinCumulativeSum[0] =  minSum;
+        maxMinCumulativeSum[1] = maxSum;
+        return maxMinCumulativeSum;
+    }
 
     public static void main(String[] args) {
-        int [] number = {3,6,7,9};
+        int [] number = {1, 2, 3};
         MyArrayList array = new MyArrayList();
+        int[] output = array.MaxMinCumulativeSumOfElementInArray(number);
+        System.out.println(Arrays.toString(output));
     }
 
 
