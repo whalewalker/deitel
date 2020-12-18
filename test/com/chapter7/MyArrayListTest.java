@@ -69,7 +69,7 @@ class MyArrayListTest {
 
     @Test
     void testIfArrayIsSortedUsingInsert(){
-        int [] newArr = {3,6,7,3,3};
+        int [] newArr = {3,6,7,3,3,4};
         array.insertArray(newArr);
         int [] testingArray = {3, 3, 3, 6, 7};
         assertEquals(Arrays.toString(newArr), Arrays.toString(testingArray));
@@ -97,7 +97,13 @@ class MyArrayListTest {
         assertEquals(Arrays.toString(maxMinCumulativeSum),Arrays.toString(result));
     }
 
-
+    @Test
+    void testIfANumberCanBeDetermineInArray(){
+        int [] myArr = {2, 4, 6, 7};
+        int findValue = 6;
+        int output = array.findGiveNumber(findValue, myArr);
+        assertEquals(findValue, output);
+    }
 
 
 }

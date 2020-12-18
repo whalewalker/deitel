@@ -61,26 +61,24 @@ public class ConvertBaseToAnotherBase {
     }
 
     public void setBaseToConvertTo(int value) {
+    if(base <= 10){
+        int base = 1;
+        int reminder;
+        String reverse = "";
+        String mainConversion = "";
 
+        while (base != 0) {
+            base = value / baseToConvertTo;
 
-        if(base <= 10){
-            int base = 1;
-            int reminder;
-            String reverse = "";
-            String mainConversion = "";
+            reminder = value % baseToConvertTo;
 
-            while (base != 0) {
-                base = value / baseToConvertTo;
+            reverse += reminder;
 
-                reminder = value % baseToConvertTo;
-
-                reverse += reminder;
-
-                value = base;
-            }
-            for(int i = reverse.length()-1; i >= 0; i--){
-                mainConversion = mainConversion + reverse.charAt(i);
-            }
+            value = base;
+        }
+        for(int i = reverse.length()-1; i >= 0; i--){
+            mainConversion = mainConversion + reverse.charAt(i);
+        }
 
         System.out.printf("%n%d in base %d is %s in base %d", originValue, originalBase, mainConversion, baseToConvertTo);
 

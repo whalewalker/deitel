@@ -52,15 +52,15 @@ public class MyArrayList {
         return newArr;
     }
 
-    public void arrangeArray(int[] arr, int arrElement1, int arrElement2) {
-        if (arr[arrElement1] > arr[arrElement2]) {
-            int storeArrayElement = arr[arrElement2];
-            arr[arrElement2] = arr[arrElement1];
-            arr[arrElement1] = storeArrayElement;
+    public void arrangeArray(int[] arr, int arrElement0, int arrElement1) {
+        if (arr[arrElement0] > arr[arrElement1]) {
+            int storeArrayElement = arr[arrElement1];
+            arr[arrElement1] = arr[arrElement0];
+            arr[arrElement0] = storeArrayElement;
         }
     }
 
-    public void  insertArray(int[] newArr) {
+    public void   insertArray(int[] newArr) {
         for (int count = 1; count < newArr.length; count++){
             int current = newArr[count];
             int j = count - 1;
@@ -127,10 +127,23 @@ public class MyArrayList {
         return maxMinCumulativeSum;
     }
 
+    public int findGiveNumber(int value, int[] arr){
+        int output = 0;
+        int [] sortedArr = sortArray(arr);
+        for (int counter = 0; counter < sortedArr.length; counter++){
+            if(sortedArr[counter] == value){
+                output = sortedArr[counter];
+                System.out.println(value);
+            }
+        }
+        return output;
+    }
+
+
     public static void main(String[] args) {
-        int [] number = {1, 2, 3};
+        int [] number = {7, 4, 1,7,3};
         MyArrayList array = new MyArrayList();
-        int[] output = array.MaxMinCumulativeSumOfElementInArray(number);
+        int [] output = array.sortArray(number);
         System.out.println(Arrays.toString(output));
     }
 
