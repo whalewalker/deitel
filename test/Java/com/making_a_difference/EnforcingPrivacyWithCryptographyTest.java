@@ -60,6 +60,7 @@ class EnforcingPrivacyWithCryptographyTest {
         String  pin= "9043";
         String thirdSwap = Cryptography.thirdSwap(pin, 3, 1);
         assertEquals("3762", thirdSwap);
+//        assertEquals();
     }
 
     @Test

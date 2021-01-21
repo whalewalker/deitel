@@ -27,6 +27,14 @@ public class Cryptography {
         return reverse;
     }
 
+    public static String reverse (String pin){
+         String rev = "";
+        for(int i = pin.length()-1; i>=0; i--){
+            rev += pin.charAt(i);
+        }
+        return rev;
+    }
+
     public static String firstSwap(String pinOutput, int first, int third) {
         char[] stringToCharArray = pinOutput.toCharArray();
         char temp = stringToCharArray[first];
@@ -83,12 +91,12 @@ public class Cryptography {
                 operation = (10 + reminder) - 7;
             }else {
                 operation = (10 + reminder)/2;
-                if(operation == 9){
-                    operation = 2;
+                if(operation == 7){
+                    operation = 0;
                 }else if(operation == 8){
                     operation = 1;
-                }else if(operation == 7){
-                    operation = 0;
+                }else if(operation == 9){
+                    operation = 2;
                 }
             }
             decryptPin += operation;

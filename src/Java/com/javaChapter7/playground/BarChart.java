@@ -1,7 +1,4 @@
-package Java.com.javaChapter7;
-
-import java.util.Arrays;
-import java.util.function.DoubleToIntFunction;
+package Java.com.javaChapter7.playground;
 
 public class BarChart {
     public int generateBars(int[] arr) {

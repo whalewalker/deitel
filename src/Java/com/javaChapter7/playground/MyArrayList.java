@@ -1,4 +1,4 @@
-package Java.com.javaChapter7;
+package Java.com.javaChapter7.playground;
 
 import java.util.Arrays;
 
@@ -72,7 +72,7 @@ public class MyArrayList {
         }
     }
 
-    public int[] removeItemInArray(int[] arr, int index){
+    public  int[] removeItemInArray(int[] arr, int index){
         if(arr == null || index < 0 || index >= arr.length)
             return arr;
 

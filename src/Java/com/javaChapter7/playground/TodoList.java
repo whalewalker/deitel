@@ -1,4 +1,4 @@
-package Java.com.javaChapter7;
+package Java.com.javaChapter7.playground;
 
 import java.util.Arrays;
 import java.util.Scanner;

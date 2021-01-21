@@ -37,8 +37,7 @@ public class Entry {
 
 
     public String viewEntry() {
-        String preview = ("Title: " + getEntryTitle() + "\n" + "Entry Date: " + getEntryDateAndTime().toLocalDate() + "\n" + "Entry Body: " + getEntryBody());
-        return preview;
+        return ("Title: " + getEntryTitle() + "\n" + "Entry Date: " + getEntryDateAndTime().toLocalDate() + "\n" + "Entry Body: " + getEntryBody());
     }
 
     @Override

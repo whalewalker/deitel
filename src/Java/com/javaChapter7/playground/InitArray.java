@@ -1,4 +1,4 @@
-package Java.com.javaChapter7;
+package Java.com.javaChapter7.playground;
 
 public class InitArray {
     public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package Java.com.Mathematics;
 
+import java.util.Scanner;
+
 public class CollatzConjecture {
     public void calculateCollatz(int value) {
         if (value == 0 || value == -(value)) {
@@ -50,9 +52,21 @@ public class CollatzConjecture {
         return output;
     }
 
+//
+//    public static void main(String[] args) {
+////        CollatzConjecture myNumber = new CollatzConjecture();
+////        myNumber.calculateCollatz(6);
+//    }
 
     public static void main(String[] args) {
-        CollatzConjecture myNumber = new CollatzConjecture();
-        myNumber.calculateCollatz(6);
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+        double d = scan.nextDouble();
+        String s = scan.next().toString();
+        // Write your code here.
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
     }
 }

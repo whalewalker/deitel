@@ -1,6 +1,6 @@
 package com.chapter7;
 
-import Java.com.javaChapter7.MyArrayList;
+import Java.com.javaChapter7.playground.MyArrayList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
