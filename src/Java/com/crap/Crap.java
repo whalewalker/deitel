@@ -6,11 +6,6 @@ import java.security.SecureRandom;
 
 public class Crap {
 
-    private static int winCount;
-    private static int lostCount;
-    private static int continueCount;
-
-
     private int firstDice;
     private int secondDice;
 
@@ -19,27 +14,6 @@ public class Crap {
     private static final int SEVEN = 7;
     private static final int YO_LEVEN = 11;
     private static final int BOX_CARS = 12;
-
-
-    public static int getWinCount() {
-        return winCount;
-    }
-
-    public static int getLostCount() {
-        return lostCount;
-    }
-
-    public static int getContinueCount() {
-        return continueCount;
-    }
-
-    public int getFirstDice() {
-        return firstDice;
-    }
-
-    public int getSecondDice() {
-        return secondDice;
-    }
 
 
     public int generateRandomNumber() {
@@ -59,11 +33,7 @@ public class Crap {
         firstDice = generateRandomNumber();
         secondDice = generateRandomNumber();
 
-        int sum = firstDice + secondDice;
-
-        System.out.printf("Player rolled %d + %d = %d%n",
-                firstDice, secondDice, sum);
-       return sum;
+        return firstDice + secondDice;
     }
 
     public boolean checkSum(int sum) {
@@ -73,7 +43,7 @@ public class Crap {
         return false;
     }
 
-    public void checkGameStatus() {
+    public Status checkGameStatus() {
         Status gameStatue;
         int sumOfDice = getSum();
         int myPoint = 0;
@@ -88,44 +58,47 @@ public class Crap {
             default -> {
                 gameStatue = Status.CONTINUE;
                 myPoint = sumOfDice;
-                System.out.printf("Point is %d%n", myPoint);
+                return continueGame(gameStatue, myPoint);
             }
         }
-        continueGame(gameStatue, myPoint);
-        checkIfWonOrLose(gameStatue);
+
+        return checkIfWonOrLose(gameStatue);
     }
 
-    public boolean checkIfWonOrLose(Status gameStatus){
+    public Status checkIfWonOrLose(Status gameStatus){
         if(gameStatus == Status.WIN){
-            System.out.println("Player wins");
-            winCount++;
-            return true;
-        }else {
-            System.out.println("Player loses");
-            lostCount++;
-            return false;
-        }
+            return gameStatus;
+        }else
+            return gameStatus;
     }
 
-    public void continueGame(Status gameStatus, int currentPoint){
-        while (gameStatus == Status.CONTINUE){
+    public Status continueGame(Status gameStatus, int currentPoint) {
+        while (gameStatus == Status.CONTINUE) {
 
             int sum = getSum();
-            if(sum == currentPoint){
-                gameStatus = Status.WIN;
+            if (sum == currentPoint) {
+                return Status.WIN;
             }
-            if(sum == SEVEN)
-                gameStatus = Status.LOSE;
+            if (sum == SEVEN)
+                return Status.LOSE;
         }
+        return null;
     }
-
 
     public static void main(String[] args) {
         Crap myCrap = new Crap();
-        myCrap.checkGameStatus();
-//        System.out.println(myCrap.getFirstDice());
-        System.out.println(getLostCount() + " Lost");
-        System.out.println(getWinCount() + " Win");
+        int win = 0;
+        int lose = 0;
+        for(int count = 0; count < 10000; count++){
+            if(myCrap.checkGameStatus() == Status.WIN){
+             win++;
+            }else {
+                lose++;
+            }
+        }
+        System.out.println("The time you won in 10000 rows of dice " + win);
+        System.out.println("The time you lose in 10000 rows of dice " + lose);
+
     }
 
 }

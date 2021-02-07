@@ -54,9 +54,9 @@ class CrapTest {
         assertTrue(isCorrect);
     }
 
-    @Test
-    void checkIfUserWinOrLose(){
-        boolean win = myCrap.checkIfWonOrLose(Status.WIN);
-    }
+//    @Test
+//    void checkIfUserWinOrLose(){
+//        boolean win = myCrap.checkIfWonOrLose(Status.WIN);
+//    }
 
 }
