@@ -6,7 +6,7 @@ public class CountLetterInArray {
     private char[] characterArray;
 
     public CountLetterInArray() {
-        characterArray = new char[100];
+        characterArray = new char[3];
     }
 
     public char[] createCharacterArray() {
