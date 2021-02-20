@@ -42,8 +42,7 @@ public class BinaryNumberToDecimal {
                 decimalValue = rev;
                 anyNumber = anyNumber / 10;
             }
-
-            System.out.printf("%n%d in base %d is %d in decimal(base ten)", original, base,  decimalValue);
+System.out.printf("%n%d in base %d is %d in decimal(base ten)", original, base,  decimalValue);
         }else{
             System.out.println("Invalid user input, enter base from two to ten");
         }
