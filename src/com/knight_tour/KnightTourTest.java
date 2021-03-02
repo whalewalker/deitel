@@ -72,7 +72,6 @@ class KnightTourTest {
 
         knight.turnRightTwoColumnOneRow();
         assertEquals(com.knight_tour.Direction.SOUTH, knight.getCurrentDirection());
-
         knight.turnLeftTwoColumnOneRow();
         assertEquals(Direction.SOUTH, knight.getCurrentDirection());
     }
@@ -94,6 +93,7 @@ class KnightTourTest {
     void knightCheeseBoard_canMove_EastWard_WhilePenIsDown(){
 
     }
+
 
 
 }

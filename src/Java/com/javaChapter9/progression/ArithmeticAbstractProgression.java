@@ -1,17 +1,17 @@
 package Java.com.javaChapter9.progression;
 
-public class ArithmeticProgression extends Progression{
+public class ArithmeticAbstractProgression extends AbstractProgression {
     private long increment;
 
-    public ArithmeticProgression(){
+    public ArithmeticAbstractProgression(){
         this(0, 1);
     }
 
-    public ArithmeticProgression(long stepSize){
+    public ArithmeticAbstractProgression(long stepSize){
        this(stepSize, 0);
     }
 
-    public ArithmeticProgression(long stepSize, long start){
+    public ArithmeticAbstractProgression(long stepSize, long start){
         super(start);
         this.increment = stepSize;
     }

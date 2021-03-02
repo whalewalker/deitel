@@ -1,6 +1,6 @@
 package Java.com.javaChapter9.progression;
 
-public class Fibonacci extends Progression {
+public class Fibonacci extends AbstractProgression {
 
     private long prevNum;
 

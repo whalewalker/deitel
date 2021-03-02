@@ -1,13 +1,9 @@
 package Java.com.javaChapter9.progression;
 
-public class Progression {
+public abstract class AbstractProgression {
     private Long current;
 
-    public Progression() {
-        this(0L);
-    }
-
-    public Progression(Long current) {
+    public AbstractProgression(Long current) {
         this.current = current;
     }
 
@@ -19,9 +15,7 @@ public class Progression {
         this.current = current;
     }
 
-    public void advance() {
-        current++;
-    }
+    public abstract void advance();
 
     public Long nextValue() {
         long answer = current;

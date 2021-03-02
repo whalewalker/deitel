@@ -6,62 +6,57 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ProgressionTest {
-    Progression progression;
-    ArithmeticProgression arithmeticProgression;
-    GeometricProgression geometricProgression;
+class AbstractProgressionTest {
+    AbstractProgression abstractProgression;
+    ArithmeticAbstractProgression arithmeticProgression;
+    GeometricAbstractProgression geometricProgression;
     Fibonacci fibonacci;
 
     @BeforeEach
     void setUp() {
-        progression = new Progression();
-        arithmeticProgression = new ArithmeticProgression();
-        geometricProgression = new GeometricProgression();
+        arithmeticProgression = new ArithmeticAbstractProgression();
+        geometricProgression = new GeometricAbstractProgression();
          fibonacci = new Fibonacci();
     }
 
     @AfterEach
     void tearDown() {
-        progression = null;
+        abstractProgression = null;
         arithmeticProgression = null;
     }
 
-    @Test
-    void progression_canSetDefaultValueAtThePointOfCreatingProgressionObject(){
-        progression = new Progression(6L);
-        assertEquals(progression.getCurrent(), 6);
-    }
+
 
     @Test
     void test_currentValueCanBeGetAfterConstruction(){
-        assertEquals(progression.getCurrent(), 0);
+        assertEquals(abstractProgression.getCurrent(), 0);
     }
 
     @Test
     void test_currentValueCanBeSet(){
-        progression.setCurrent(4L);
-        assertEquals(progression.getCurrent(), 4);
+        abstractProgression.setCurrent(4L);
+        assertEquals(abstractProgression.getCurrent(), 4);
     }
 
     @Test
     void Progression_canIncrementCurrentValue(){
-        progression.setCurrent(4L);
-        progression.advance();
-        assertEquals(progression.getCurrent(), 5);
+        abstractProgression.setCurrent(4L);
+        abstractProgression.advance();
+        assertEquals(abstractProgression.getCurrent(), 5);
     }
 
     @Test
     void Progression_canGetPreviousProgressionByIncreasingTheCurrentValue(){
-        progression.setCurrent(4L);
-        assertEquals(progression.nextValue(), 4);
-        assertEquals(progression.nextValue(), 5);
-        assertEquals(progression.nextValue(), 6);
+        abstractProgression.setCurrent(4L);
+        assertEquals(abstractProgression.nextValue(), 4);
+        assertEquals(abstractProgression.nextValue(), 5);
+        assertEquals(abstractProgression.nextValue(), 6);
     }
 
     @Test
     void Progression_canPrintAllPossibleProgressionOfAGivenValue(){
-        progression.setCurrent(4L);
-        assertEquals("4,5,6,", progression.printProgression(3));
+        abstractProgression.setCurrent(4L);
+        assertEquals("4,5,6,", abstractProgression.printProgression(3));
     }
 
     @Test
@@ -71,13 +66,13 @@ class ProgressionTest {
 
     @Test
     void arithmeticProgression_canSetOneDefaultValueAtPointOfCreation(){
-        arithmeticProgression = new ArithmeticProgression(0);
+        arithmeticProgression = new ArithmeticAbstractProgression(0);
         assertEquals(arithmeticProgression.getCurrent(), 0);
     }
 
     @Test
     void setArithmeticProgression_canIncrementCurrentValue(){
-        arithmeticProgression = new ArithmeticProgression(2, 1);
+        arithmeticProgression = new ArithmeticAbstractProgression(2, 1);
         arithmeticProgression.advance();
         assertEquals(arithmeticProgression.getCurrent(), 3);
         arithmeticProgression.advance();
@@ -91,20 +86,20 @@ class ProgressionTest {
 
     @Test
     void geometricProgression_canSetStartValueAtThePointOfCreation(){
-        geometricProgression = new GeometricProgression(2, 2);
+        geometricProgression = new GeometricAbstractProgression(2, 2);
         assertEquals(geometricProgression.getCurrent(), 2);
     }
 
     @Test
     void geometricProgression_canGetBaseValueAtThePointOfCreation(){
-        geometricProgression = new GeometricProgression(2);
+        geometricProgression = new GeometricAbstractProgression(2);
         assertEquals(geometricProgression.getBase(), 2);
     }
 
 
     @Test
     void setGeometricProgression_canIncrementCurrentValue(){
-        geometricProgression = new GeometricProgression(2, 1);
+        geometricProgression = new GeometricAbstractProgression(2, 1);
         geometricProgression.advance();
         assertEquals(geometricProgression.getCurrent(), 2);
         geometricProgression.advance();

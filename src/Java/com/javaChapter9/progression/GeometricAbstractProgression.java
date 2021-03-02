@@ -1,16 +1,16 @@
 package Java.com.javaChapter9.progression;
 
-public class GeometricProgression extends Progression{
+public class GeometricAbstractProgression extends AbstractProgression {
     private long base;
 
-    public GeometricProgression(){
+    public GeometricAbstractProgression(){
         this(2, 1);
     }
 
-    public GeometricProgression(long base){
+    public GeometricAbstractProgression(long base){
         this(base, 1);
     }
-    public GeometricProgression(long base, long start){
+    public GeometricAbstractProgression(long base, long start){
         super(start);
         this.base = base;
     }
