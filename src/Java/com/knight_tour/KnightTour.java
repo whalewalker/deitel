@@ -1,15 +1,15 @@
-package com.knight_tour;
+package Java.com.knight_tour;
 
 public class KnightTour {
-    private com.knight_tour.Pen pen;
+    private Java.com.knight_tour.Pen pen;
     private Direction currentDirection;
 
-    public KnightTour(com.knight_tour.Pen pen) {
+    public KnightTour(Java.com.knight_tour.Pen pen) {
         this.pen = pen;
         this.currentDirection = Direction.EAST;
     }
 
-    public com.knight_tour.Pen getPen() {
+    public Java.com.knight_tour.Pen getPen() {
         return pen;
     }
 
