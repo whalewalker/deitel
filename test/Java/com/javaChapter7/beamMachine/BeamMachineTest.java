@@ -51,7 +51,6 @@ class BeamMachineTest {
     @Test
     void beamSlot_canBeCalculated(){
         beam.setPath(PathPosition.LEFT);
-        String paths = beam.beamPaths();
         beam.calculateSlot();
         System.out.println(beam.displayPath());
         System.out.println(beam.displayBeamMachine());

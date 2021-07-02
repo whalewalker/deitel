@@ -41,19 +41,19 @@ class KnightTourTest {
         assertEquals(Java.com.knight_tour.Position.PEN_DOWN, actual);
     }
 
-    @Test
-    void knightPen_positionCanBeLeft(){
-        knight.getPen().setPenPosition(Java.com.knight_tour.Position.PEN_LEFT);
-        Java.com.knight_tour.Position actual = knight.getPen().getPenPosition();
-        assertEquals(Java.com.knight_tour.Position.PEN_LEFT, actual);
-    }
-
-    @Test
-    void knightPen_positionCanBeRight(){
-        knight.getPen().setPenPosition(Java.com.knight_tour.Position.PEN_LEFT);
-        Java.com.knight_tour.Position actual = knight.getPen().getPenPosition();
-        assertEquals(Java.com.knight_tour.Position.PEN_LEFT, actual);
-    }
+//    @Test
+//    void knightPen_positionCanBeLeft(){
+//        knight.getPen().setPenPosition(Java.com.knight_tour.Position.PEN_LEFT);
+//        Java.com.knight_tour.Position actual = knight.getPen().getPenPosition();
+//        assertEquals(Java.com.knight_tour.Position.PEN_LEFT, actual);
+//    }
+//
+//    @Test
+//    void knightPen_positionCanBeRight(){
+//        knight.getPen().setPenPosition(Java.com.knight_tour.Position.PEN_LEFT);
+//        Java.com.knight_tour.Position actual = knight.getPen().getPenPosition();
+//        assertEquals(Java.com.knight_tour.Position.PEN_LEFT, actual);
+//    }
 
     @Test
     void knight_canMoveTwoColumnOneRowToTheRight(){

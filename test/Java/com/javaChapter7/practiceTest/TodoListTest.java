@@ -1,4 +1,4 @@
-package Java.com.javaChapter7;
+package Java.com.javaChapter7.practiceTest;
 
 import Java.com.javaChapter7.playground.TodoList;
 import org.junit.jupiter.api.AfterEach;
