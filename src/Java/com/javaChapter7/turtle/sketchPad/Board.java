@@ -19,4 +19,7 @@ public class Board {
         return numberOfColumn;
     }
 
+    public int[][] getBoard() {
+        return board;
+    }
 }

@@ -9,6 +9,7 @@ import Java.com.javaChapter7.turtle.sketchPad.SketchPad;
 import Java.com.javaChapter7.turtle.sketchPad.SketchPadPosition;
 
 import static Java.com.javaChapter7.turtle.direction.Direction.*;
+import static Java.com.knight_tour.Position.PEN_DOWN;
 import static Java.com.knight_tour.Position.PEN_UP;
 
 public class Turtle {
@@ -114,7 +115,7 @@ public class Turtle {
                     currentSketchPadPosition.setRowPosition(currentRow + stepToMoves);
                 }
                 case NORTH_EAST -> {
-                    if(currentRow <= 0 || currentColumn >= floor.getNumberOfColumn())throw new SketchPadUnderFlowException("Number of column or row is underflow");
+                    if(currentRow <= 0 || currentColumn >= floor.getNumberOfColumn())throw new SketchPadOverFlowException("Number of column or row is underflow");
                     currentSketchPadPosition.setRowPosition(currentRow - stepToMoves);
                     currentSketchPadPosition.setColumnPosition(currentColumn + stepToMoves);
                 }
@@ -123,6 +124,23 @@ public class Turtle {
                     if (currentRow <= 0 || currentColumn <= 0) throw new SketchPadUnderFlowException("Number of column or row is underflow");
                     currentSketchPadPosition.setRowPosition(currentRow - stepToMoves);
                     currentSketchPadPosition.setColumnPosition(currentColumn - stepToMoves);
+                }
+            }
+        }
+
+        if (getPen().getPenPosition() == PEN_DOWN){
+            int currentColumn = getCurrentSketchPadPosition().getColumnPosition();
+            int currentRow = getCurrentSketchPadPosition().getRowPosition();
+
+            switch (currentDirection){
+                case EAST -> {
+                    int startingPoint = getCurrentSketchPadPosition().getColumnPosition();
+
+                    while (startingPoint <= stepToMoves){
+                        floor.getBoard()[currentRow][startingPoint] = 1;
+                        startingPoint++;
+                    }
+
                 }
             }
         }

@@ -289,7 +289,7 @@ public class TurtleTest {
         } catch (SketchPadOverFlowException | SketchPadUnderFlowException e) {
             e.getLocalizedMessage();
         }
-        assertEquals(new SketchPadPosition(3, 3), turtle.getCurrentSketchPadPosition());
+        assertEquals(new SketchPadPosition(11, 3), turtle.getCurrentSketchPadPosition());
     }
 
     @Test
@@ -316,6 +316,61 @@ public class TurtleTest {
             e.getLocalizedMessage();
         }
         assertEquals(new SketchPadPosition(1, 13), turtle.getCurrentSketchPadPosition());
+    }
+
+
+
+    @Test
+    void turtleSketch_canThrowException_OnSouthWestWard_WhilePenIsUp() {
+        turtle.setCurrentDirection(SOUTH_WEST);
+        turtle.setCurrentSketchPadPosition(new SketchPadPosition(0, 0));
+        int stepToMoves = 7;
+        assertThrows(SketchPadUnderFlowException.class, ()-> turtle.move(sketchPad, stepToMoves));
+    }
+
+    @Test
+    void turtleSketch_canThrowException_OnNorthWestWard_WhilePenIsUp() {
+        turtle.setCurrentDirection(NORTH_WEST);
+        turtle.setCurrentSketchPadPosition(new SketchPadPosition(0, 0));
+        int stepToMoves = 7;
+        assertThrows(SketchPadUnderFlowException.class, ()-> turtle.move(sketchPad, stepToMoves));
+    }
+
+
+
+    @Test
+    void turtleSketch_canThrowException_OnSouthEastWard_WhilePenIsUp() {
+        turtle.setCurrentDirection(SOUTH_EAST);
+        turtle.setCurrentSketchPadPosition(new SketchPadPosition(0, 20));
+        int stepToMoves = 7;
+        assertThrows(SketchPadOverFlowException.class, ()-> turtle.move(sketchPad, stepToMoves));
+    }
+
+
+    @Test
+    void turtleSketch_canThrowException__OnNorthEastWard_WhilePenIsUp()  {
+        turtle.setCurrentDirection(NORTH_EAST);
+        turtle.setCurrentSketchPadPosition(new SketchPadPosition(0, 0));
+        int stepToMoves = 7;
+        assertThrows(SketchPadOverFlowException.class, ()-> turtle.move(sketchPad, stepToMoves));
+    }
+
+
+    @Test
+    void turtle_canWriteOnSketchPad_whileFastingEast(){
+        turtle.getPen().setPenPosition(PEN_DOWN);
+        turtle.setCurrentSketchPadPosition(new SketchPadPosition(0, 0));
+        int numberOfSteps = 7;
+        try {
+            turtle.move(sketchPad, numberOfSteps);
+        } catch (SketchPadOverFlowException | SketchPadUnderFlowException e) {
+            e.printStackTrace();
+        }
+        for (int column = 0; column < numberOfSteps; column++){
+            int expected = sketchPad.getSketchPad().getBoard()[0][column];
+            assertEquals(1, expected);
+        }
+        assertEquals(new SketchPadPosition(0, 6), turtle.getCurrentSketchPadPosition());
     }
 
 
