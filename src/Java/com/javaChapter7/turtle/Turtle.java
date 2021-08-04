@@ -81,11 +81,13 @@ public class Turtle {
         stepToMoves -= 1;
         Board floor = sketchPad.getSketchPad();
 
-        if (getPen().getPenPosition() == PEN_UP) {
-            int currentColumn = getCurrentSketchPadPosition().getColumnPosition();
-            int currentRow = getCurrentSketchPadPosition().getRowPosition();
+        int currentColumn = getCurrentSketchPadPosition().getColumnPosition();
+        int currentRow = getCurrentSketchPadPosition().getRowPosition();
 
-            SketchPadPosition currentSketchPadPosition = getCurrentSketchPadPosition();
+        SketchPadPosition currentSketchPadPosition = getCurrentSketchPadPosition();
+
+        if (getPen().getPenPosition() == PEN_UP) {
+
             switch (currentDirection){
                 case EAST ->{
                     if (currentColumn >= floor.getNumberOfColumn()) throw new SketchPadOverFlowException("Number of column has been exceeded");
@@ -129,18 +131,33 @@ public class Turtle {
         }
 
         if (getPen().getPenPosition() == PEN_DOWN){
-            int currentColumn = getCurrentSketchPadPosition().getColumnPosition();
-            int currentRow = getCurrentSketchPadPosition().getRowPosition();
 
             switch (currentDirection){
                 case EAST -> {
-                    int startingPoint = getCurrentSketchPadPosition().getColumnPosition();
-
-                    while (startingPoint <= stepToMoves){
-                        floor.getBoard()[currentRow][startingPoint] = 1;
-                        startingPoint++;
+                    while (currentColumn < stepToMoves){
+                        floor.getBoard()[currentRow][currentColumn++] = 1;
                     }
+                    currentSketchPadPosition.setColumnPosition(currentColumn);
+                }
+                case SOUTH -> {
+                    while (currentRow < stepToMoves){
+                        floor.getBoard()[currentRow++][currentColumn] = 1;
+                    }
+                    currentSketchPadPosition.setRowPosition(currentRow);
+                }
 
+                case NORTH -> {
+                    while (stepToMoves > 0){
+                        floor.getBoard()[stepToMoves--][currentColumn] = 1;
+                    }
+                    currentSketchPadPosition.setRowPosition(stepToMoves);
+                }
+
+                case WEST -> {
+                    while (stepToMoves > 0){
+                        floor.getBoard()[currentRow][stepToMoves--] = 1;
+                    }
+                    currentSketchPadPosition.setColumnPosition(stepToMoves);
                 }
             }
         }
