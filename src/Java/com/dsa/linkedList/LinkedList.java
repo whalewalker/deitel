@@ -7,5 +7,5 @@ public interface LinkedList<E> {
     E last(); // Returns (but does not remove) the last element in the list.
     void addFirst(E e); //Adds a new node to the front of the list.
     void addLast(E e); //Adds a new node to the end of the list.
-    void removeFirst(); //Removes and returns the first element of the list.
+    E removeFirst(); //Removes and returns the first element of the list.
 }

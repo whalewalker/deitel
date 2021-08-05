@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SinglyLinkedListTest {
-    SinglyLinkedList singlyLinkedList;
+    SinglyLinkedList<String> singlyLinkedList;
 
     @BeforeEach
     void setUp() {
-        singlyLinkedList = new SinglyLinkedList<String>();
+        singlyLinkedList = new SinglyLinkedList<>();
     }
 
     @AfterEach
@@ -26,10 +26,43 @@ class SinglyLinkedListTest {
     }
 
     @Test
-    void canAddDataToTheFrontOfALinkedListTest(){
+    void canAddDataToTheFrontOfASinglyLinkedListTest(){
         String value = "Hello world";
         singlyLinkedList.addFirst(value);
         assertEquals(singlyLinkedList.size(), 1);
-        assertNotNull(singlyLinkedList.getHead());
+        assertNotNull(singlyLinkedList.getHead(),  "Hello world");
     }
+
+    @Test
+    void canAddMoreThanOneDataToTheFrontOfASinglyLinkedListTest(){
+       singlyLinkedList.addFirst("Boy");
+        singlyLinkedList.addFirst("Girl");
+        assertEquals(singlyLinkedList.size(), 2);
+        assertNotNull(singlyLinkedList.getHead(), "Girl");
+    }
+
+    @Test
+    void canAddDataToTheEndOfASinglyLinkedListTest(){
+        String value = "Hello world";
+        singlyLinkedList.addLast(value);
+        assertEquals(singlyLinkedList.size(), 1);
+        assertNotNull(singlyLinkedList.getHead(),  "Hello world");
+    }
+
+    @Test
+    void canAddMoreThanOneDataToTheEndOfASinglyLinkedListTest(){
+        singlyLinkedList.addLast("Boy");
+        singlyLinkedList.addLast("Girl");
+        assertEquals(singlyLinkedList.size(), 2);
+        assertNotNull(singlyLinkedList.getTail(), "Boy");
+    }
+
+    @Test
+    void canRemoveFirstValueInSinglyLinkedLIst(){
+        singlyLinkedList.addFirst("Boy");
+        singlyLinkedList.addFirst("Girl");
+        String removedData = singlyLinkedList.removeFirst();
+        assertEquals(removedData, "Girl");
+    }
+
 }
