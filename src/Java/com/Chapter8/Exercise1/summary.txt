@@ -1,0 +1,133 @@
+Section 8.2 Time Class Case Study
+• The public methods of a class are also known as the class’s public services or public interface
+They present to the class’s clients a view of the services the class provides.
+
+• A class’s private members are not accessible to its clients.
+
+• String class static method format (p. 318) is similar to method System.out.printf except that
+format returns a formatted String rather than displaying it in a command window.
+
+• All objects in Java have a toString method that returns a String representation of the object.
+Method toString is called implicitly when an object appears in code where a String is needed.
+
+Section 8.3 Controlling Access to Members
+• The access modifiers public and private control access to a class’s variables and methods.
+
+• The primary purpose of public methods is to present to the class’s clients a view of the services
+the class provides. Clients need not be concerned with how the class accomplishes its tasks.
+
+• A class’s private variables and private methods (i.e., its implementation details) are not accessible to its clients.
+
+Section 8.4 Referring to the Current Object’s Members with the 'this' Reference
+• An instance method of an object implicitly uses keyword this (p. 322) to refer to the object’s
+instance variables and other methods. Keyword this can also be used explicitly.
+
+• The compiler produces a separate file with the .class extension for every compiled class.
+
+• If a local variable has the same name as a class’s field, the local variable shadows the field. You
+can use the 'this' reference in a method to refer to the shadowed field explicitly.
+
+Section 8.5 Time Class Case Study: Overloaded Constructors
+• Overloaded constructors enable objects of a class to be initialized in different ways. The compiler
+differentiates overloaded constructors (p. 324) by their signatures.
+
+• To call one constructor of a class from another of the same class, you can use the this keyword
+followed by parentheses containing the constructor arguments. If used, such a constructor call
+must appear as the first statement in the constructor’s body.
+
+Section 8.6 Default and No-Argument Constructors
+• If no constructors are provided in a class, the compiler creates a default constructor.
+
+• If a class declares constructors, the compiler will not create a default constructor. In this case, you
+must declare a no-argument constructor (p. 327) if default initialization is required.
+
+Section 8.7 Notes on Set and Get Methods
+• Set methods are commonly called mutator methods (p. 331) because they typically change a val-
+ue. Get methods are commonly called accessor methods (p. 331) or query methods. A predicate
+method (p. 332) tests whether a condition is true or false.
+
+Section 8.8 Composition
+• A class can have references to objects of other classes as members. This is called composition
+(p. 332) and is sometimes referred to as a has-a relationship.
+
+Section 8.9 enum Types
+• All enum types (p. 335) are reference types. An enum type is declared with an enum declaration,
+which is a comma-separated list of enum constants. The declaration may optionally include other
+components of traditional classes, such as constructors, fields and methods.
+
+• enum constants are implicitly final , because they declare constants that should not be modified.
+
+• enum constants are implicitly static .
+
+• Any attempt to create an object of an enum type with operator new results in a compilation error.
+
+• enum constants can be used anywhere constants can be used, such as in the case labels of switch
+statements and to control enhanced for statements.
+
+• Each enum constant in an enum declaration is optionally followed by arguments which are passed
+to the enum constructor.
+
+• For every enum , the compiler generates a static method called values (p. 336) that returns an
+array of the enum ’s constants in the order in which they were declared.
+
+• EnumSet static method range (p. 337) receives the first and last enum constants in a range and
+returns an EnumSet that contains all the constants between these two constants, inclusive.
+
+Section 8.10 Garbage Collection
+• The Java Virtual Machine (JVM) performs automatic garbage collection (p. 338) to reclaim the
+memory occupied by objects that are no longer in use. When there are no more references to an
+object, the object is eligible for garbage collection. The memory for such an object can be re-
+claimed when the JVM executes its garbage collector.
+
+Section 8.11 static Class Members
+• A static variable (p. 338) represents classwide information that’s shared among the class’s objects.
+
+• static variables have class scope. A class’s public static members can be accessed through a ref-
+erence to any object of the class, or they can be accessed by qualifying the member name with
+the class name and a dot ( . ). Client code can access a class’s private static class members only
+through methods of the class.
+
+• static class members exist as soon as the class is loaded into memory.
+
+• A method declared static cannot access a class’s instance variables and instance methods, be-
+cause a static method can be called even when no objects of the class have been instantiated.
+
+• The 'this' reference cannot be used in a static method.
+
+Section 8.12 static Import
+• A static import declaration (p. 342) enables you to refer to imported static members without
+the class name and a dot ( . ). A single static import declaration imports one static member,
+and a static import on demand imports all static members of a class.
+
+Section 8.13 final Instance Variables
+• In the context of an app’s code, the principle of least privilege (p. 343) states that code should be
+granted only the amount of privilege and access that it needs to accomplish its designated task.
+
+• Keyword final specifies that a variable is not modifiable. Such variables must be initialized when
+they’re declared or by each of a class’s constructors.
+
+Section 8.14 Package Access
+• If no access modifier is specified for a method or variable when it’s declared in a class, the method
+or variable is considered to have package access (p. 344).
+
+Section 8.15 Using BigDecimal for Precise Monetary Calculations
+• Any application that requires precise floating-point calculations without rounding errors—such as
+those in financial applications—should instead use class BigDecimal (package java.math ; p. 346).
+
+• BigDecimal static method valueOf (p. 347) with a double argument returns a BigDecimal that
+represents the exact value specified.
+
+• BigDecimal method add (p. 347) adds its argument BigDecimal to the BigDecimal on which the
+method is called and returns the result.
+
+• BigDecimal provides the constants ONE ( 1 ), ZERO ( 0 ) and TEN ( 10 ).
+
+• BigDecimal method pow (p. 347) raises its first argument to the power specified in its second argument.
+
+• BigDecimal method multiply (p. 347) multiplies its argument BigDecimal with the BigDecimal
+on which the method is called and returns the result.
+
+• Class NumberFormat (package java.text; p. 347) provides capabilities for formatting numeric
+values as locale-specific String s. The class’s static method getCurrencyInstance returns a pre-
+configured NumberFormat for local-specific currency values. NumberFormat method format per-
+forms the formatting.
