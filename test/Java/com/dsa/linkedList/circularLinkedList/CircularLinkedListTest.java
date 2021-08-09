@@ -125,7 +125,11 @@ class CircularLinkedListTest {
 
         assertFalse(circularLinkedList.isEmpty());
         assertEquals(circularLinkedList.size(), 2);
+<<<<<<< HEAD
         assertEquals(circularLinkedList.first(), 5);
+=======
+        assertEquals(circularLinkedList.first(), 6);
+>>>>>>> origin/main
         assertEquals(circularLinkedList.last(), 7);
     }
 
@@ -147,7 +151,11 @@ class CircularLinkedListTest {
         assertFalse(circularLinkedList.isEmpty());
         assertEquals(circularLinkedList.size(), 3);
         assertEquals(circularLinkedList.last(), 7);
+<<<<<<< HEAD
         assertEquals(circularLinkedList.first(), 6`);
+=======
+        assertEquals(circularLinkedList.first(), 5);
+>>>>>>> origin/main
     }
 
 
