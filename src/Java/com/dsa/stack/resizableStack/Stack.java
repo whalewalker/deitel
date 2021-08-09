@@ -1,6 +1,4 @@
-package Java.com.javaChapter9.stack;
-
-import java.math.BigDecimal;
+package Java.com.dsa.stack.resizableStack;
 
 public class Stack {
     private int[] elements;
