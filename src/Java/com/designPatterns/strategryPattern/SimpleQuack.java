@@ -1,4 +1,4 @@
-package Java.com.designPatterns.strategryPattern.animalStrategy;
+package Java.com.designPatterns.strategryPattern;
 
 public class SimpleQuack  implements Quackable{
     @Override
