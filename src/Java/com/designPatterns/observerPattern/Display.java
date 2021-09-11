@@ -1,5 +1,5 @@
 package Java.com.designPatterns.observerPattern;
 
-public interface Displayble {
+public interface Display {
     void display();
 }
