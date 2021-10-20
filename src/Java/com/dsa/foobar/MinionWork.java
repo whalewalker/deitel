@@ -1,22 +1,42 @@
 package Java.com.dsa.foobar;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class MinionWork {
 
-    public Object[] removeDuplicate(int[] array, int duplicate) {
-        if (duplicate == 0) return null;
-        int[] duplicateArr = new int[99];
-        for (int i : array) {
-            duplicateArr[i]++;
-        }
-        List<Integer> NonDuplicate = new ArrayList<>();
-        for (int count = 0; count < duplicateArr.length; count++) {
-            if(duplicateArr[count] == duplicate){
-                NonDuplicate.add(count);
+    public static void main(String[] args) {
+        List<Integer> array = new ArrayList<>();
+        array.add(1);
+        array.add(2);
+        array.add(3);
+        array.add(3);
+        System.out.println(MinionWork.solution(array, 1));
+    }
+    public static List<Integer> solution(List<Integer> data, int n) {
+        if (data == null || data.size() > 99 || data.size() == 0) return null;
+        if (n <= 0) return null;
+        Map<Integer, Integer> m = new HashMap<>();
+        for (int e : data) {if (!m.containsKey(e)) m.put(e, 1);
+            else m.put(e, m.get(e) + 1);}
+
+        for (int key : m.keySet()) {
+            if (m.get(key) > n){
+
+                for (int i = 0; i < m.get(key); i++){
+                    int index = data.indexOf(key);
+                    data.remove(index);
+                }
             }
         }
-        return NonDuplicate.toArray();
+        return data;
+
+//        Set<Integer> s = m.keySet();
+//        s.removeIf(v -> m.get(v) > n);
+//        int[] dup = new int[s.size()];
+//        int c = 0;
+//        for (int key : m.keySet()) dup[c++] = key;
+//        return dup;
     }
+
+
 }

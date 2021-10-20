@@ -1,31 +1,51 @@
-package Java.com.dsa.foobar;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-class MinionWorkTest {
-    MinionWork minionWork;
-
-    @BeforeEach
-    void setUp() {
-        minionWork = new MinionWork();
-    }
-
-    @AfterEach
-    void tearDown() {
-        minionWork = null;
-    }
-
-    @Test
-    void removeDuplicateInNthTerm(){
-        int[] array = {5, 10, 15, 10, 7};
-        int duplicate = 1;
-
-        System.out.println(Arrays.toString(minionWork.removeDuplicate(array, duplicate)));
-    }
-}
+//package Java.com.dsa.foobar;
+//
+//import org.junit.jupiter.api.Test;
+//
+//import java.util.Arrays;
+//import java.util.List;
+//
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertNotNull;
+//
+//class MinionWorkTest {
+//    private final int[] numbers = {1, 2, 2, 3, 3, 3, 4, 5, 5};
+//
+////    @Test
+////    void solutionForNullArray(){
+////        assertThrows(IndexOutOfBoundsException.class,
+////                     ()-> MinionWork.solution(null, 3));
+////    }
+//
+//    @Test
+//    void  solutionForOccurrenceLessOne(){
+//        int[] result = MinionWork.solution(numbers, 0);
+//        assertNotNull(result);
+//        assertEquals(0, result.length);
+//    }
+//
+//    @Test
+//    void solutionForOneOccurrence(){
+//        assertEquals(9, numbers.length);
+//        int[] result = MinionWork.solution(numbers., 1);
+//        assertNotNull(result);
+//        assertEquals(1, result[0]);
+//        assertEquals(4, result[1]);
+//
+//    }
+//
+//    @Test
+//    void solutionForMoreThanTwoOccurrence(){
+//        assertEquals(9, numbers.length);
+//        int[] result = MinionWork.solution(numbers, 1);        assertNotNull(result);
+//        assertEquals(2, result.length);
+//    }
+//
+//    @Test
+//    void solutionForMoreThanThreeOccurrence(){
+//        assertEquals(9, numbers.length);
+//        int [] result = MinionWork.solution(new int[]{1, 2, 3}, 0);
+//        assertNotNull(result);
+//        assertEquals(0, result.length);
+//    }
+//}
