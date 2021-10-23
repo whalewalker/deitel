@@ -10,8 +10,9 @@ public class LeetCode {
         int sliceBack = s.length();
         String newSubString = s.substring(sliceFront, sliceBack);
         int loopCount = 0;
+        int counter = 0;
 
-        for (int counter = 0; counter < s.length(); counter++) {
+        while (counter != s.length()) {
             if (hasDuplicate(newSubString)) {
                 return newSubString.length();
             } else {
@@ -26,6 +27,7 @@ public class LeetCode {
                 newSubString = s.substring(sliceFront, sliceBack);
                 loopCount = s.length() - sliceBack;
             }
+            counter++;
         }
 
         return 0;
