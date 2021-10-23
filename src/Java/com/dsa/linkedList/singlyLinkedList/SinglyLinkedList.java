@@ -48,8 +48,8 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
     @Override
     public void addLast(E e) { // adds element e to the end of the list
         Node<E> newest = new Node<>(e, null); // node will eventually be the tail
-        if (isEmpty()) head = newest; //
-        tail.setNext(newest); // new node after existing tail
+        if (isEmpty()) head = newest;
+        else tail.setNext(newest); // new node after existing tail
         tail = newest; // new node becomes the tail
         size++;
     }
