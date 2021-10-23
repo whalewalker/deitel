@@ -3,7 +3,7 @@ package Java.com.dsa.Queue;
 public class QueueAlgorithms {
 
     public <T> CircularQueue<T> buildQueue(T[] array) {
-        CircularQueue<T> queue = new CircularQueueImpl<>();
+        CircularQueue<T> queue = new CircularLinkedListQueue<>();
         for (T t : array) {
             queue.enqueue(t);
         }

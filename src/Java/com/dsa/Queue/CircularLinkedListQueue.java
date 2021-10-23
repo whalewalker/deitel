@@ -2,7 +2,7 @@ package Java.com.dsa.Queue;
 
 import Java.com.dsa.linkedList.circularLinkedList.CircularLinkedList;
 
-public class CircularQueueImpl<T> implements CircularQueue<T>{
+public class CircularLinkedListQueue<T> implements CircularQueue<T>{
     private final CircularLinkedList<T> list = new CircularLinkedList<>();
     /**
      * Rotates the front element of the queue to the back
