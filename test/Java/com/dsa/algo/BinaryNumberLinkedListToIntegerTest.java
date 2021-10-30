@@ -1,6 +1,6 @@
 package Java.com.dsa.algo;
 
-import Java.com.dsa.linkedList.singlyLinkedList.SinglyLinkedList;
+import Java.com.dsa.linkedList.SinglyLinkedList;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

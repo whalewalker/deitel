@@ -1,6 +1,6 @@
 package Java.com.dsa.Queue;
 
-import Java.com.dsa.linkedList.singlyLinkedList.SinglyLinkedList;
+import Java.com.dsa.linkedList.SinglyLinkedList;
 
 /** Realization of a FIFO queue as an adaptation of a SinglyLinkedList. */
 public class LinkedQueue<T> implements Queue<T>{

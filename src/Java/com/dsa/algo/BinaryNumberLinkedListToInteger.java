@@ -1,6 +1,6 @@
 package Java.com.dsa.algo;
 
-import Java.com.dsa.linkedList.singlyLinkedList.SinglyLinkedList;
+import Java.com.dsa.linkedList.SinglyLinkedList;
 import Java.com.javaChapter4.BinaryNumberToDecimal;
 
 import java.util.ArrayList;

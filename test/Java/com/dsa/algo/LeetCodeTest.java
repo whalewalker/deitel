@@ -83,4 +83,9 @@ class LeetCodeTest {
     void when_sortedArraysBothContainValidElement_returnMedianOfSortedArray(){
         assertEquals(2.50000, leetCode.findMedianSortedArrays(new int[]{1,2}, new int[]{3, 4}));
     }
+
+    @Test
+    void test(){
+        assertEquals(2.50000, leetCode.findMedianSortedArrays(new int[]{}, new int[]{2, 3}));
+    }
 }

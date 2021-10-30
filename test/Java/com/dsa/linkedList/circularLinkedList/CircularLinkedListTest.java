@@ -1,5 +1,6 @@
 package Java.com.dsa.linkedList.circularLinkedList;
 
+import Java.com.dsa.linkedList.CircularLinkedList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

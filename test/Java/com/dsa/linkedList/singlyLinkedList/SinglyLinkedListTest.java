@@ -1,5 +1,6 @@
 package Java.com.dsa.linkedList.singlyLinkedList;
 
+import Java.com.dsa.linkedList.SinglyLinkedList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

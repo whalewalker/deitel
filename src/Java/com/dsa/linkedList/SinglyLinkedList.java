@@ -1,4 +1,4 @@
-package Java.com.dsa.linkedList.singlyLinkedList;
+package Java.com.dsa.linkedList;
 
 import Java.com.dsa.linkedList.LinkedList;
 import Java.com.dsa.linkedList.Node;

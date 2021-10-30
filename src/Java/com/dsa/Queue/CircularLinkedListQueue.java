@@ -1,6 +1,6 @@
 package Java.com.dsa.Queue;
 
-import Java.com.dsa.linkedList.circularLinkedList.CircularLinkedList;
+import Java.com.dsa.linkedList.CircularLinkedList;
 
 public class CircularLinkedListQueue<T> implements CircularQueue<T>{
     private final CircularLinkedList<T> list = new CircularLinkedList<>();
