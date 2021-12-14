@@ -1,123 +1,76 @@
 package Java.com.dsa.algo;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BikeTest {
-    Bike bike;
-
+    Bike suzuki;
     @BeforeEach
-    void setUp() {
-        bike = new Bike("power bike");
-    }
-
-    @AfterEach
-    void tearDown() {
-        bike = null;
+    public void startWithThis() {
+        suzuki = new Bike("suzuki",0,0);
     }
 
     @Test
-     void checkThatBikeIsNotNullWhenCreated(){
-        assertNotNull(bike);
-    }
-
-    @Test
-    void checkThatBikeSetDefaultValueWhenCreated(){
-        assertEquals("power bike", bike.getName());
-        assertFalse(bike.isOn());
-        assertEquals(0, bike.getSpeed());
-    }
-
-    @Test
-    void checkThatBikeCanTurnOn(){
-        bike.setOn(true);
-        assertTrue(bike.isOn());
-    }
-
-    @Test
-    void checkThatBikeCanTurnOff(){
-        // Given that
-        bike.setOn(true);
-
-        //When
-        bike.setOn(false);
-
-        //Assert
-        assertFalse(bike.isOn());
-    }
-
-    @Test
-    void canChangeBikeName(){
-        bike.setName("Bajaj");
-        assertEquals("Bajaj", bike.getName());
-    }
-
-
-    @Test
-    void whenBikeIsOffThenGearShouldBeZero(){
-        assertEquals(0, bike.getGear());
-    }
-
-    @Test
-    void whenBikeIsOnThenGearShouldBeOne(){
-        bike.setOn(true);
-        assertEquals(1, bike.getGear());
-    }
-
-    @Test
-    void canSetBikeSpeed(){
-        bike.setSpeed(10);
-        assertEquals(10, bike.getSpeed());
-    }
-
-    @Test
-    void bikeCannotAccelerateWhenOff(){
-        //Given
-        bike.setOn(false);
-
-        //When
-        bike.accelerate();
-
-        //Assert
-        assertFalse(bike.isOn());
-        assertEquals(0, bike.getSpeed());
-    }
-
-    @Test
-    void bikeCanAccelerateByOneWhenOn(){
-        //Given
-        bike.setOn(true);
-        //When
-        bike.accelerate();
-        //Assert
-        assertEquals(1, bike.getSpeed());
-        assertEquals(1, bike.getGear());
+    void canCreateBike(){
+        Bike suzuki = new Bike("suzuki",0,0);
+        assertEquals(suzuki.getName(),"suzuki");
+        assertEquals(suzuki.getAccelerate(),0);
+        assertEquals(suzuki.getDeacceletrate(),0);
+        assertEquals(suzuki.getGear(),0);
     }
     @Test
-    void bikeCanAccelerateByTwoWhenOn(){
-        //Given
-        bike.setOn(true);
-        //when
-        for (int i=0; i< 21; i++){
-            bike.accelerate();
-        }
-        assertEquals(23, bike.getSpeed());
+    public  void getBikeName(){
+        Bike suzuki = new Bike("suzuki",0,0);
+        String bikeName = suzuki.getbikeName("");
+        assertEquals ("suzuki",bikeName);
     }
-
     @Test
-    void gearCanIncrement(){
-        //Given
-        bike.setOn(true);
-        //when
-        for(int i =0; i<21;i++){
-            bike.accelerate();
-        }
-        assertEquals(2,bike.getGear());
+    public void bikeCanTurnOn(){
+        Bike suzuki =new Bike("suzuki",0,0);
+        suzuki.isOn();
+        assertFalse(suzuki.isOn);
+
+        suzuki.turnOn();
+        assertTrue(suzuki.isOn);
+
 
     }
+    @Test
+    public void bikeCanTurnOff(){
+        suzuki.isOff();
+        assertTrue(suzuki.isOff());
 
+        suzuki.turnOff();
+        assertFalse(suzuki.isOn());
+    }
+    @Test
+    public void bikeCanAccelerate(){
+        suzuki.isOn();
+        suzuki.canAccelerate();
+        assertEquals(0, suzuki.canAccelerate());
+    }
+    @Test
+    public void canIncreaseAcceleration(){
+        suzuki.isOn();
+        suzuki.canAccelerate();
+        suzuki.IncreaseAcceleration();
+        assertEquals(0,suzuki.IncreaseAcceleration());
+    }
+    @Test
+    public void bikeGearOne(){
+        suzuki.isOn();
+        suzuki.canAccelerate();
+        suzuki.IncreaseAcceleration();
+        suzuki.gearRange(1);
+        assertEquals(1, suzuki.gear);
+    }
+    @Test
+    public void setDeacceletrate(){
+        suzuki.isOn();
+        suzuki.Deaccelerate();
+        assertEquals(0,suzuki.getDeacceletrate());
+
+    }
 }
