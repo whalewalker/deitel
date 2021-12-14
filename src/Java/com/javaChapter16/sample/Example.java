@@ -11,6 +11,8 @@ public class Example<T> {
             if (collection2.contains(iterator.hasNext()))
                 iterator.remove();
         }
+
+
     }
 
     public void addColor(Collection<T> collection){
@@ -53,7 +55,14 @@ public class Example<T> {
             list.add(color);
      }
 
-    public static <integer> void main(String[] args) {
+    public static void main(String[] args) {
+        String[] names = new String[]{"Hello", "hellen", "Listen", "Baby"};
+        List<String> listName = new ArrayList<>();
+        listName.add(Arrays.toString(names));
+
+        System.out.println(listName);
+
+
 //        String[] colors = {"black", "yellow", "green", "blue", "violet", "silver"};
 //        Example<String> list1 = new Example<>();
 //
@@ -71,11 +80,11 @@ public class Example<T> {
 
 
 
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(3);
-        list.add(4);
-        list.add(8);
+//        List<Integer> list = new ArrayList<>();
+//        list.add(1);
+//        list.add(3);
+//        list.add(4);
+//        list.add(8);
 
 //        List<Integer> list2 = list;
 //        System.out.println("first loop");
@@ -99,6 +108,8 @@ public class Example<T> {
 
 
     }
+
+
 
 
 }

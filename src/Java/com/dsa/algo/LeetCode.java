@@ -93,4 +93,41 @@ public class LeetCode {
     /* Maximum sum of a contiguous sub-array of size 3 */
 
 
+    /*Given a string s, return the longest palindromic substring in s. */
+    public String longestPalindrome(String s) {
+
+        // MANUAL WAY
+        /*
+        * Create a method to return substring of an array
+        * Create a method to check if a string is palindrome
+        * return that substring;
+        * */
+
+
+
+        // EFFICIENT WAY
+        /*
+           * Use Sliding window algorithm to get substring of a string
+           * Use set to find palindrome of a String
+           * Return that string if it is a palindrome
+         */
+        return null;
+    }
+
+    public String getSubString(String s){
+        int loopCount = getCountValue(s);
+        StringBuilder builder = new StringBuilder();
+        for (int index = 0; index < loopCount; index++){
+            builder = new StringBuilder(s.substring(index, s.length() - index));
+            System.out.println("Index " + builder);
+        }
+        return null;
+    }
+
+    private int getCountValue(String s) {
+        if (s.length() % 2 == 0)
+            return (s.length() / 2) * (1 + s.length());
+        else
+            return ((s.length() + 1 ) / 2) * (s.length());
+    }
 }

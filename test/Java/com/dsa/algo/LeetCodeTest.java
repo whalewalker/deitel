@@ -88,4 +88,10 @@ class LeetCodeTest {
     void test(){
         assertEquals(2.50000, leetCode.findMedianSortedArrays(new int[]{}, new int[]{2, 3}));
     }
+
+    @Test
+    void checkIfStringCanPrintToTerminalInStringConsecutiveNumber(){
+        String value = "Hell0";
+        leetCode.getSubString(value);
+    }
 }
