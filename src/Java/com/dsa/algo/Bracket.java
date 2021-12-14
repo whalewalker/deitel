@@ -22,17 +22,17 @@ package Java.com.dsa.algo;
 
 public class Bracket {
 
-    public boolean isValidBracket(String expected) {
-        if (expected == null) throw new NullPointerException("String cannot be null");
-        if (expected.trim().equals("")) return false;
-        if (expected.length() % 2 == 1) return false;
-        if (expected.charAt(0) == ')') return false;
+    public boolean isValidBracket(String num) {
+        if (num == null) throw new NullPointerException("String cannot be null");
+        if (num.trim().equals("")) return false;
+        if (num.length() % 2 == 1) return false;
+        if (num.charAt(0) == ')') return false;
 
 //        Stack<Character> charArr = new ArrayStack<>();
 //
-//       for (int index = 0; index < expected.length(); index++){
-//           if (expected.charAt(index) == '('){
-//               charArr.push(expected.charAt(index));
+//       for (int index = 0; index < num.length(); index++){
+//           if (num.charAt(index) == '('){
+//               charArr.push(num.charAt(index));
 //           }else  {
 //               charArr.pop();
 //           }
@@ -40,8 +40,8 @@ public class Bracket {
 
         int rightCounter = 0, leftCounter = 0;
 
-        for (int index = 0; index < expected.length(); index++) {
-            if (expected.charAt(index) == '(') {
+        for (int index = 0; index < num.length(); index++) {
+            if (num.charAt(index) == '(') {
                 rightCounter++;
                 leftCounter--;
             } else {
