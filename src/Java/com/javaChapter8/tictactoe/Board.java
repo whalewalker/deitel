@@ -22,18 +22,17 @@ public class Board {
         this.board = board;
     }
 
-    public String toString(){
+    public String displayBoard(){
         StringBuilder builder = new StringBuilder();
-        for (int row = 0; row < board.length; row++) {
+        for (Flag[] flags : board) {
             for (int column = 0; column < board.length; column++) {
-                switch (board[row][column]){
-                    case EMPTY -> builder.append(" ");
-                    case O -> builder.append("O");
-                    case X -> builder.append("X");
+                switch (flags[column]) {
+                    case EMPTY -> builder.append(" - ");
+                    case O -> builder.append(" O ");
+                    case X -> builder.append(" X ");
                 }
-                if (column < 2) builder.append("|");
             }
-            if (row < 2) builder.append("\n------\n");
+            builder.append("\n");
         }
         return builder.toString();
     }

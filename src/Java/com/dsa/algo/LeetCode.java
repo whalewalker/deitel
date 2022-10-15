@@ -7,30 +7,31 @@ import java.util.Map;
 public class LeetCode {
 
     public int subString(String s) {
-//        int[] chars = new int[128];
+        int[] chars = new int[128];
+
+        int left = 0;
+        int right = 0;
+
+        int res = 0;
+        while (right < s.length()) {
+            char r = s.charAt(right);
+            System.out.println(r);
+            System.out.println(chars[r]++);;
+
+            while (chars[r] > 1) {
+                char l = s.charAt(left);
+                chars[l]--;
+                left++;
+            }
+
+            res = Math.max(res, right - left + 1);
+
+            right++;
+        }
+        return res;
 //
-//        int left = 0;
-//        int right = 0;
-//
-//        int res = 0;
-//        while (right < s.length()) {
-//            char r = s.charAt(right);
-//            System.out.println(r);
-//            System.out.println(chars[r]++);;
-//
-//            while (chars[r] > 1) {
-//                char l = s.charAt(left);
-//                chars[l]--;
-//                left++;
-//            }
-//
-//            res = Math.max(res, right - left + 1);
-//
-//            right++;
-//        }
-//        return res;
-        if (s == null || s.length() == 0) return 0;
-//        if (s.length() == 1) return 1;
+//        if (s == null || s.length() == 0)
+//        if (s.length() == 1)
 //
 //        int sliceFront = 0;
 //        int sliceBack = s.length();
@@ -55,18 +56,18 @@ public class LeetCode {
 //            }
 //            counter++;
 //        }
-//
+
 //        return 0;
-        int n = s.length(), ans = 0;
-        Map<Character, Integer> map = new HashMap<>();
-        for (int count = 0, index = 0; count < n; count++) {
-            if (map.containsKey(s.charAt(count))) {
-                index = Math.max(map.get(s.charAt(count)), index);
-            }
-            ans = Math.max(ans, count - index + 1);
-            map.put(s.charAt(count), count + 1);
-        }
-        return ans;
+//        int n = s.length(), ans = 0;
+//        Map<Character, Integer> map = new HashMap<>();
+//        for (int count = 0, index = 0; count < n; count++) {
+//            if (map.containsKey(s.charAt(count))) {
+//                index = Math.max(map.get(s.charAt(count)), index);
+//            }
+//            ans = Math.max(ans, count - index + 1);
+//            map.put(s.charAt(count), count + 1);
+//        }
+//        return ans;
     }
 
     private boolean hasDuplicate(CharSequence value) {
